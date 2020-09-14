@@ -1,0 +1,998 @@
+﻿<!DOCTYPE html>
+<html>
+<head>  
+  
+    <meta charset="utf-8">
+    <title>joao-e0c75.web.app</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+<script>
+      // Initialize Firebase
+      // Cambiar por sus credenciales
+   var config = {
+    
+	 apiKey: "AIzaSyC2b-BueCpLfPj-GoQ1hsuXhDy0iLg7WJE",
+    authDomain: "joao-e0c78.firebaseapp.com",
+    databaseURL: "https://joao-e0c75.firebaseio.com",
+    projectId: "joao-e0c75",
+    storageBucket: "joao-e0c78.appspot.com",
+    messagingSenderId: "685686240330",
+    appId: "1:681686240330:web:b3edbe73f5a9b6073c6ab3",
+    measurementId: "G-J0NMW67VJS"
+   
+      };  	     
+	
+	 
+   
+      firebase.initializeApp(config);
+    </script>
+    
+   <style>
+	body {
+   
+	background:#0e8578;
+	
+	}							
+	  	   	 	 	 	                 			
+.switch{	
+	 width:430px;
+    height:160px;
+    margin:40px 20px 10px;
+    position:relative;	   
+ 
+}
+ 
+.switch input{
+    display:block;
+    width:100%;
+    height: 100%; 
+    position:absolute;
+    top:5;
+    left:5;
+    z-index: 10; 
+    opacity: 0;
+    cursor: pointer;	
+ 
+}
+/*Fundo OFF */
+.switch label{
+    display: block;
+    width: 100%;
+    height: 100%; 
+    background: -moz-linear-gradient(#647886, #14aed5, #153738);
+    background: -ms-linear-gradient(#647886, #153738);
+    background: -o-linear-gradient(#647886, #C00, #153738);
+    background: -webkit-linear-gradient(#647886, #C00, #153738);
+    background: linear-gradient(#020307,#000,  #158596); 
+    border-radius: 40px;	
+	
+}
+
+.switch4{
+	width:900px;
+    height:60px;
+    
+    display: block;
+   
+    background: -moz-linear-gradient(#647886, #14aed5, #8ff2e8);
+    background: -ms-linear-gradient(#647886, #153738);
+    background: -o-linear-gradient(#647886, #C00, #153738);
+    background: -webkit-linear-gradient(#647886, #8ff2e8, #153738);
+    background: linear-gradient(#146d64,#383d49,  #158596); 
+    border-radius: 40px;
+		font-weight: bold;
+	font-style: italic;
+	font-size: 50px;
+	color:#f7fafa;
+	text-align:center;	
+	
+}
+ 
+.switch label:after{
+    content: "";
+ 
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    z-index: -1; 
+    background: -moz-linear-gradient(#EEEEEE, #AAAAAA);
+    background: -ms-linear-gradient(#EEEEEE, #AAAAAA);
+    background: -o-linear-gradient(#EEEEEE, #AAAAAA);
+    background: -webkit-linear-gradient(#EEEEEE, #AAAAAA);
+    background: linear-gradient(#EEEEEE, #AAAAAA); 
+    border-radius: inherit;	
+ 
+}
+ 
+.switch label span{
+    display: block;
+    width: 60%;
+    height: 100%;
+    background: #C0C0C0;
+ content: "off";
+    position: absolute;
+    z-index: 2;
+    right: 41%;
+    top: 0; 
+    background: -moz-linear-gradient(#E0E0E0, #A0A0A0);
+    background: -ms-linear-gradient(#E0E0E0, #A0A0A0);
+    background: -o-linear-gradient(#E0E0E0, #A0A0A0);
+    background: -webkit-linear-gradient(#E0E0E0, #A0A0A0);
+    background: linear-gradient(#E0E0E0, #A0A0A0); 
+    border-radius: inherit;	
+ 
+}
+ /*botao click*/
+.switch label span:after {
+    content: "RELE";
+ 
+    position: absolute;
+    left: 15%;
+    top: 25%; 
+    width: 70%;
+    height: 50%; 
+    background: -moz-linear-gradient(#F7F7F7, #6b737c, #CCCCCC);
+    background: -ms-linear-gradient(#F7F7F7, #fe4504, #CCCCCC);
+    background: -o-linear-gradient(#F7F7F7,#fe4504,  #CCCCCC);
+    background: -webkit-linear-gradient(#F7F7F7,#fe4504,  #CCCCCC);
+    background: linear-gradient(#F7F7F7, #6b737c, #158596);
+    border-radius: inherit;
+	 box-shadow:1px 5px 30px rgba(2,4,1,1);
+	
+}
+ 
+.switch label span:before {
+    content: "off"; 
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    right: -50%; 
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 30px; 
+    color: #fff;	 
+}
+
+   /*fundo ON */
+.switch input:checked ~ label {
+ 
+    background: -moz-linear-gradient(#f76605, #f74f05);
+    background: -ms-linear-gradient(#05f71c, #1A6600);
+    background: -o-linear-gradient(#05f71c, #f74f05);
+    background: -webkit-linear-gradient(#05f71c, #1A6600);
+    background: linear-gradient(#f74f05, #ead41d);
+	margin:0 2px;
+	 box-shadow:1px 10px 30px rgba(2,4,1,1); 
+	
+	
+		
+}
+
+
+
+
+
+
+ 
+.switch input:checked ~ label span{
+    right: -2px;
+}
+ 
+.switch input:checked ~ label span:before {
+    content: "on";
+    right: 115%;
+	
+ 
+}
+ .letras{		 
+	font-weight: bold;
+	font-style: italic;
+	font-size: 20px;
+	color:#000;
+	text-align:center;	
+	 } 
+	  
+	  .letras2{	
+	 -webkit-text-stroke-width: 2px; /* largura da borda */
+    -webkit-text-stroke-color: #000; /* cor da borda */
+	border-radius: 10px;
+	 font-size:50px;	 
+	font-weight: bold;
+	font-style: italic;		
+	color:#fcfaf9;
+	text-align:center;
+	background:  linear-gradient( 45deg, red, green, yellow, blue );
+		
+	 } 
+	 
+	 .letras3{
+		display:250px;	
+	 -webkit-text-stroke-width: 2px; /* largura da borda */
+    -webkit-text-stroke-color: #000; /* cor da borda */
+	border-radius: 10px;
+	 font-size:40px;	 
+	font-weight: bold;
+	font-style: italic;		
+	color:#fcfaf9;
+	text-align:center;
+	background-image: linear-gradient(57deg,rgba(255,255,255,1.00) 0%,rgba(21,8,8,1.00) 46.63%,rgba(255,0,0,1.00) 100%);
+		
+	 } 
+	 
+	  .letras4{	
+	 -webkit-text-stroke-width: 2px; /* largura da borda */
+    -webkit-text-stroke-color: #000; /* cor da borda */
+	border-radius: 10px;
+	 color:#0FF;
+	font-family:"Arial Black", Gadget, sans-serif;
+    font-size:50px;
+    font-weight:bold;
+	letter-spacing: 2px;
+	text-align:center;
+	background-image: linear-gradient(red, yellow);
+		
+	 } 
+	 
+	  .letras5{	
+	  
+	   width:500px;
+    height:50px;	 
+	
+		
+	 } 
+	 
+  nav {
+       background-image: linear-gradient(57deg,rgba(255,255,255,1.00) 0%,rgba(21,8,8,1.00) 46.63%,rgba(255,0,0,1.00) 100%);
+      }
+	  
+	  .fundo3 {
+	background:  linear-gradient( 45deg, red, green, yellow, blue );
+}
+    
+  .jms {
+	width:1000px;
+	background-image: linear-gradient(57deg,rgba(255,255,255,1.00) 0%,rgba(21,8,8,1.00) 46.63%,rgba(255,0,0,1.00) 100%);
+	margin:1px auto;
+	padding:10px;
+	font-size:60px;
+	text-align:center;
+	box-shadow:20px 20px 10px #060;
+	-webkit-box-shadow: 20px 20px 10px #000;
+	-moz-box-shadow: 20px 20px 10px #000;
+	border-radius: 10px;
+	font-weight: bold;
+	font-style: italic;
+	cursor: pointer;
+	color: #000;
+	text-shadow: -4px -4px 4px #FC3;		
+	}
+	
+	
+	.clockStyle {		 	
+	background-color:#000;
+	border:#999 2px inset;
+	padding:12px;
+	color:#0FF;
+	font-family:"Arial Black", Gadget, sans-serif;
+    font-size:50px;
+    font-weight:bold;
+	letter-spacing: 2px;
+	display:250px;
+}														
+	
+	html, body {
+			font-family: sans-serif;
+		}
+
+		
+
+		main {
+			text-align: center;
+			font-size:20px;
+		}
+
+		button {
+			font: inherit;
+			cursor: pointer;
+		}
+
+		.botao {
+			display: inline-block;
+			margin: 1.5em;
+			border: 0;
+			padding: 0.5em 1em;
+			text-decoration: none;
+			color: #FFF;
+			background: #060509;
+			text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+			border-radius: 0.5em;
+			box-shadow: 3px 3px 0 3px #6b6b74;
+			transition: box-shadow 0.3s ease, transform 0.3s ease;
+		}
+
+		.botao:active {
+			box-shadow: 0 0 0 0 #930,
+						inset 4px 4px 4px #930;
+			transform: translate(6px, 6px);
+		}
+	
+   </style>
+    </head>
+  <body> 
+  <table width="900" border="0" align="center">
+  <tr>
+    <th class="jms" scope="col">IOT Joao Mariano</th>   
+  </tr>
+</table>
+
+<table width="500" border="0" align="center">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+<table width="900" border="0" align="center">
+  <tr>
+    <th scope="col"> <h6 class="letras2">Controle Esp8266 e Firebase</h6></th>
+  </tr>
+</table>
+
+
+<table width="500" border="0" align="center">
+  <tr>
+    <td></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+<table width="500" border="0" align="center">
+  <tr>
+    <td><div class="switch">
+    <input type="checkbox"  name="LED1" onclick="GetCheck('LED1', this)" id="checkLed1"  />
+    <label for="option"><span class="letras">RELE D1</span></span></label></div></td>
+    
+    
+    <td><div class="switch">
+    <input type="checkbox" name="LED2" onclick="GetCheck('LED2', this)" id="checkLed2" />
+    <label for="option"><span class="letras">.....RELE D2</span></span></label></div></td>
+  </tr>
+</table>
+<table width="500" border="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+<table width="500" border="0" align="center">
+  <tr>
+    <td><div class="switch">
+    <input type="checkbox" name="LED3" onclick="GetCheck('LED3', this)" id="checkLed3" />
+    <label for="option"><span class="letras">.....RELE D3</span></span></label></div></td>
+    
+    
+    <td><div class="switch">
+    <input type="checkbox" name="LED4" onclick="GetCheck('LED4', this)" id="checkLed4" />
+    <label for="option"><span class="letras">.....RELE D5</span></span></label></div></td>
+  </tr>
+</table>
+
+
+<table width="500" border="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<table width="500" border="0" align="center">
+  <tr>
+    <td><div class="switch">
+    <input type="checkbox" name="LED5" onclick="GetCheck('LED5', this)" id="checkLed5" />
+    <label for="option"><span class="letras">.....RELE D0</span></span></label></div></td>
+    
+    
+    <td><div class="switch">
+    <input type="checkbox" name="LED6" onclick="GetCheck('LED6', this)" id="checkLed6" />
+    <label for="option"><span class="letras">.....RELE D6</span></span></label></div></td>
+  </tr>
+</table>
+
+
+
+<table width="500" border="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<table width="900" border="0" align="center">
+  <tr>
+    <td><div class="switch">
+    <input type="checkbox" name="LED7" onclick="GetCheck('LED7', this)" id="checkLed7" />
+    <label for="option"><span class="letras">.....RELE D7</span></span></label></div></td>
+    
+    
+    <td><div class="switch">
+    <input type="checkbox" name="LED8" onclick="GetCheck('LED8', this)" id="checkLed8" />
+    <label for="option"><span class="letras">.....RELE D8</span></span></label></div></td>
+  </tr>
+</table>
+
+
+<table width="900" border="0" align="center">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+<table width="900" border="0" align="center" >
+  <tr>
+    <td bgcolor="#999999">
+    <main>
+	<a href="https://joao-e0c75.web.app/" class="botao">
+		joao-e0c75!
+	</a></main>
+    </td>
+    
+    <td bgcolor="#999999">    
+    <main>
+	<a href="https://casa-12749.web.app/" class="botao">
+		casa-12749!
+	</a></main>       
+    </td>
+    
+    <td bgcolor="#999999">
+     <main>
+	<a href="https://wemos-f6258.web.app" class="botao">
+		wemos-f6258!
+	</a></main> 
+    </td>
+     
+    <td bgcolor="#FFCC99">
+     <main>
+	<a href="https://arduino-fa8b5.web.app/" class="botao">
+		arduino-fa8b5!
+	</a></main> 
+    </td>
+  </tr>
+</table>
+
+
+
+
+<table width="500" border="0" align="center">
+  <tr>
+    <td><h2 class="letras3">HORA ATUAL</h2>
+<div id="clockDisplay" class="clockStyle"></div></td>
+  </tr>
+</table>
+
+<table width="500" border="0" align="center">
+  <tr>
+    <th scope="col">&nbsp;</th>
+  </tr>
+</table>
+
+
+<table width="900" border="0" align="center">
+  <tr>
+    <th scope="col"> <h6 class="switch4">CONTROLE .  . ESP8266 . . 2</h6></th>
+  </tr>
+</table>
+
+<table width="500" border="0" align="center">
+  <tr>
+    <td><div class="switch">
+    <input type="checkbox" name="LED9" onclick="GetCheck('LED9', this)" id="checkLed9" />
+    <label for="option"><span class="letras">RELE D1</span></span></label></div></td>
+    
+    
+    <td><div class="switch">
+    <input type="checkbox" name="LED10" onclick="GetCheck('LED10', this)" id="checkLed10" />
+    <label for="option"><span class="letras">.....RELE D2</span></span></label></div></td>
+  </tr>
+</table>
+<table width="500" border="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+<table width="500" border="0" align="center">
+  <tr>
+    <td><div class="switch">
+    <input type="checkbox" name="LED11" onclick="GetCheck('LED11', this)" id="checkLed11" />
+    <label for="option"><span class="letras">.....RELE D3</span></span></label></div></td>
+    
+    
+    <td><div class="switch">
+    <input type="checkbox" name="LED12" onclick="GetCheck('LED12', this)" id="checkLed12" />
+    <label for="option"><span class="letras">.....RELE D5</span></span></label></div></td>
+  </tr>
+</table>
+
+
+<table width="500" border="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<table width="500" border="0" align="center">
+  <tr>
+    <td><div class="switch">
+    <input type="checkbox" name="LED13" onclick="GetCheck('LED13', this)" id="checkLed13" />
+    <label for="option"><span class="letras">.....RELE D0</span></span></label></div></td>
+    
+    
+    <td><div class="switch">
+    <input type="checkbox" name="LED14" onclick="GetCheck('LED14', this)" id="checkLed14" />
+    <label for="option"><span class="letras">.....RELE D6</span></span></label></div></td>
+  </tr>
+</table>
+
+
+
+<table width="500" border="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<table width="900" border="0" align="center">
+  <tr>
+    <td><div class="switch">
+    <input type="checkbox" name="LED15" onclick="GetCheck('LED15', this)" id="checkLed15" />
+    <label for="option"><span class="letras">.....RELE D7</span></span></label></div></td>
+    
+    
+    <td><div class="switch">
+    <input type="checkbox" name="LED16" onclick="GetCheck('LED16', this)" id="checkLed16" />
+    <label for="option"><span class="letras">.....RELE D8</span></span></label></div></td>
+  </tr>
+</table>
+
+
+<table width="500" border="0" align="center">
+  <tr>
+    <th class="letras5" scope="col">&nbsp;</th>
+  </tr>
+</table>
+
+
+
+<table width="900" border="0" align="center">
+  <tr>
+    <th scope="col"> <h6 class="switch4">CONTROLE .  . ESP8266 . . 3</h6></th>
+  </tr>
+</table>
+
+<table width="500" border="0" align="center">
+  <tr>
+    <td><div class="switch">
+    <input type="checkbox" name="LED17" onclick="GetCheck('LED17', this)" id="checkLed17" />
+    <label for="option"><span class="letras">RELE D1</span></span></label></div></td>
+    
+    
+    <td><div class="switch">
+    <input type="checkbox" name="LED18" onclick="GetCheck('LED18', this)" id="checkLed18" />
+    <label for="option"><span class="letras">.....RELE D2</span></span></label></div></td>
+  </tr>
+</table>
+<table width="500" border="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+<table width="500" border="0" align="center">
+  <tr>
+    <td><div class="switch">
+    <input type="checkbox" name="LED19" onclick="GetCheck('LED19', this)" id="checkLed19" />
+    <label for="option"><span class="letras">.....RELE D3</span></span></label></div></td>
+    
+    
+    <td><div class="switch">
+    <input type="checkbox" name="LED20" onclick="GetCheck('LED20', this)" id="checkLed20" />
+    <label for="option"><span class="letras">.....RELE D5</span></span></label></div></td>
+  </tr>
+</table>
+
+
+<table width="500" border="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<table width="500" border="0" align="center">
+  <tr>
+    <td><div class="switch">
+    <input type="checkbox" name="LED21" onclick="GetCheck('LED21', this)" id="checkLed21" />
+    <label for="option"><span class="letras">.....RELE D0</span></span></label></div></td>
+    
+    
+    <td><div class="switch">
+    <input type="checkbox" name="LED22" onclick="GetCheck('LED22', this)" id="checkLed22" />
+    <label for="option"><span class="letras">.....RELE D6</span></span></label></div></td>
+  </tr>
+</table>
+
+
+
+<table width="500" border="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<table width="900" border="0" align="center">
+  <tr>
+    <td><div class="switch">
+    <input type="checkbox" name="LED23" onclick="GetCheck('LED23', this)" id="checkLed23" />
+    <label for="option"><span class="letras">.....RELE D7</span></span></label></div></td>
+    
+    
+    <td><div class="switch">
+    <input type="checkbox" name="LED24" onclick="GetCheck('LED24', this)" id="checkLed24" />
+    <label for="option"><span class="letras">.....RELE D8</span></span></label></div></td>
+  </tr>
+</table>
+
+
+  <script>
+
+/*
+  Esqueleto de la BD
+
+  var db = firebase.database().ref('home').set({
+    led1:true,
+    led2:true
+  });
+*/
+
+
+var db = firebase.database().ref('home');
+
+// último estado
+
+db.on('value', function(data){
+
+   console.log("data: ", data.val(""));
+   $("#checkLed1").prop('checked', data.val().casa1);
+   $("#checkLed2").prop('checked', data.val().casa2);
+   $("#checkLed3").prop('checked', data.val().casa3);
+   $("#checkLed4").prop('checked', data.val().casa4);
+   
+   $("#checkLed5").prop('checked', data.val().casa5);
+   $("#checkLed6").prop('checked', data.val().casa6);
+   $("#checkLed7").prop('checked', data.val().casa7);
+   $("#checkLed8").prop('checked', data.val().casa8);
+   
+   
+   $("#checkLed9").prop('checked', data.val().casa9);
+   $("#checkLed10").prop('checked', data.val().casa10);
+   $("#checkLed11").prop('checked', data.val().casa11);
+   $("#checkLed12").prop('checked', data.val().casa12);
+   
+   $("#checkLed13").prop('checked', data.val().casa13);
+   $("#checkLed14").prop('checked', data.val().casa14);
+   $("#checkLed15").prop('checked', data.val().casa15);
+   $("#checkLed16").prop('checked', data.val().casa16);
+   
+   
+   
+   $("#checkLed17").prop('checked', data.val().casa17);
+   $("#checkLed18").prop('checked', data.val().casa18);
+   $("#checkLed19").prop('checked', data.val().casa19);
+   $("#checkLed20").prop('checked', data.val().casa20);
+   
+   $("#checkLed21").prop('checked', data.val().casa21);
+   $("#checkLed22").prop('checked', data.val().casa22);
+   $("#checkLed23").prop('checked', data.val().casa23);
+   $("#checkLed24").prop('checked', data.val().casa24);
+
+});
+
+
+$("#checkLed1").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa1:estado
+  });
+
+});
+
+
+$("#checkLed2").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa2:estado
+  });
+
+});
+
+$("#checkLed3").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa3:estado
+  });
+
+});
+
+$("#checkLed4").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa4:estado
+  });
+
+});
+
+
+
+$("#checkLed5").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa5:estado
+  });
+
+});
+
+
+$("#checkLed6").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa6:estado
+  });
+
+});
+
+$("#checkLed7").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa7:estado
+  });
+
+});
+
+$("#checkLed8").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa8:estado
+  });
+
+});
+
+
+
+
+
+$("#checkLed9").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa9:estado
+  });
+
+});
+
+
+$("#checkLed10").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa10:estado
+  });
+
+});
+
+$("#checkLed11").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa11:estado
+  });
+
+});
+
+$("#checkLed12").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa12:estado
+  });
+
+});
+
+
+
+$("#checkLed13").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa13:estado
+  });
+
+});
+
+
+$("#checkLed14").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa14:estado
+  });
+
+});
+
+$("#checkLed15").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa15:estado
+  });
+
+});
+
+$("#checkLed16").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa16:estado
+  });
+
+});
+
+
+
+
+$("#checkLed17").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa17:estado
+  });
+
+});
+
+
+$("#checkLed18").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa18:estado
+  });
+
+});
+
+$("#checkLed19").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa19:estado
+  });
+
+});
+
+$("#checkLed20").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa20:estado
+  });
+
+});
+
+
+
+$("#checkLed21").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa21:estado
+  });
+
+});
+
+
+$("#checkLed22").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa22:estado
+  });
+
+});
+
+$("#checkLed23").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa23:estado
+  });
+
+});
+
+$("#checkLed24").click(function(){
+  var estado = $(this).is(':checked').toString();
+
+  db.update({
+    casa24:estado
+  });
+
+});
+
+
+  </script>
+  
+  <script>
+function renderTime() {
+	var currentTime = new Date();
+	var diem = "MANHÃ";
+	var h = currentTime.getHours();
+	var m = currentTime.getMinutes();
+    var s = currentTime.getSeconds();
+	setTimeout('renderTime()',1000);
+    if (h == 0) {
+		h = 12;
+	} else if (h > 12) { 
+		h = h - 12;
+		diem="TARDE";
+	}
+	if (h < 10) {
+		h = "0" + h;
+	}
+	if (m < 10) {
+		m = "0" + m;
+	}
+	if (s < 10) {
+		s = "0" + s;
+	}
+    var myClock = document.getElementById('clockDisplay');
+	myClock.textContent = h + ":" + m + ":" + s + " " + diem;
+	myClock.innerText = h + ":" + m + ":" + s + " " + diem;
+}
+renderTime();
+</script>
+
+<script>
+$(document).ready(function() { 
+    $('#botaoDownload').hide();
+    setTimeout(function() { 
+        $('#botaoDownload').show(); 
+ }, 1 * 60 * 1000); 
+});
+</script>
+
+</body>
+</html>
